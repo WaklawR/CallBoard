@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'mptt',
     'ads',
-    'image',
+    'image'
 ]
 
 MIDDLEWARE = [

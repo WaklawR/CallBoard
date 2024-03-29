@@ -176,3 +176,4 @@ cython_debug/
 
 !/.gitignore
 !/myboard/db.sqlite3
+!/myboard/db.sqlite3

@@ -3,7 +3,6 @@ from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
 
 class Category(MPTTModel):
-    """Категории объявлений"""
     name = models.CharField("Имя", max_length=50, unique=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE,  null=True,   blank=True,   related_name='children',   verbose_name="Родитель"
     )
@@ -39,5 +38,4 @@ class Advert(models.Model):
     class Meta:
         verbose_name = "Объявление"
         verbose_name_plural = "Объявления"
-
 

@@ -180,3 +180,4 @@ cython_debug/
 !/myboard/db.sqlite3
 !/myboard/db.sqlite3
 !/myboard/db.sqlite3
+!/myboard/db.sqlite3

@@ -15,6 +15,18 @@ class Category(MPTTModel):
         order_insertion_by = ['name']
         verbose_name = "Категория"
 
+class FilterAdvert(models.Model):
+    name = models.CharField("Имя", max_length=50, unique=True)
+    slug = models.SlugField("url", max_length=50, unique=True)
+
+    def __str__(self):
+            return self.name
+
+    class Meta:
+        verbose_name = "Фильтр"
+        verbose_name_plural = "Фильтры"
+
+
 
 class Advert(models.Model):
     """Объявления"""
@@ -28,7 +40,7 @@ class Advert(models.Model):
     created = models.DateTimeField("Дата создания", auto_now_add=True)
     moderation = models.BooleanField("Модерация", default=False)
     slug = models.SlugField("url", max_length=200, unique=True)
-
+    filters = models.ForeignKey(FilterAdvert, verbose_name="Фильтр", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.subject
@@ -37,4 +49,10 @@ class Advert(models.Model):
     class Meta:
         verbose_name = "Объявление"
         verbose_name_plural = "Объявления"
+
+
+
+
+
+
 

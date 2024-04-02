@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
     {% for advert in object_list %}
         <div>
             <div class="head"><h3>{{ advert.subject}}</h3></div>
-                <h2>{{ advert.name }}</h2>
+                <div class="main"> <h2>{{ advert.name }}</h2>
 
-                <p>{{ advert.price}} р</p>
-                <p>{{ advert.slug}}</p>
-                <p>Moderation:{{advert.moderation}}</p>
-                <img src="/media/{{advert.images.image}}" alt="advert" width="300px" height="200px"/>
+                    <p>{{ advert.price}} р</p>
+                    <p>{{ advert.slug}}</p>
+                    <p>Moderation:{{advert.moderation}}</p>
+                    <img src="/media/{{advert.images.image}}" alt="advert" width="300px" height="200px"/></div>
 
         </div>
 

@@ -6,5 +6,4 @@ from .models import Advert
 
 class AdvertList(ListView):
     model = Advert
-    queryset = Advert.all()
     template_name = 'ads/advert_list.html'

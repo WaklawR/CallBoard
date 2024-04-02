@@ -34,7 +34,7 @@ class Advert(models.Model):
     category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
     subject = models.CharField("Тема", max_length=200)
     description = models.TextField("Объявление", max_length=10000)
-    images = models.ForeignKey('image.Gallery', verbose_name="Изображения",  blank=True,  null=True, on_delete=models.SET_NULL)
+    images = models.ForeignKey('image.Photo', verbose_name="Изображения",  blank=True,  null=True, on_delete=models.SET_NULL)
     file = models.FileField("Файл", upload_to="callboard_file/", blank=True, null=True)
     price = models.DecimalField("Цена", max_digits=8, decimal_places=2)
     created = models.DateTimeField("Дата создания", auto_now_add=True)

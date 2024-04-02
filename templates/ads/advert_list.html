@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for advert in object_list %}
+        <div>
+            <div style="text-align: center"><h3><b>{{ advert.subject}}</b></h3></div>
+                <h2>{{ advert.name }}</h2>
+
+                <p>{{ advert.price}} р</p>
+                <p>{{ advert.slug}}</p>
+                <p>Moderation:{{advert.moderation}}</p>
+                <img src="/media/{{advert.images.image}}" alt="advert" width="300px" height="200px"/>
+
+        </div>
+
+    {% endfor %}
+{% endblock content %}

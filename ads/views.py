@@ -14,4 +14,4 @@ class AdvertDetail(DetailView):
     """Подробно об объявлении"""
     model = Advert
     context_object_name = 'Advert'
-    template_name = "ads/advert_info.html"
+    template_name = "ads/advert_detail.html"

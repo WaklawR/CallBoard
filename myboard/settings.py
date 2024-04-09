@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'mptt',
     'ads',
     'image'
+    'profiles'
 ]
 
 MIDDLEWARE = [

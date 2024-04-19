@@ -5,13 +5,14 @@ from django.views.generic import ListView, DetailView
 from .models import Advert
 
 class AdvertList(ListView):
+
     model = Advert
     template_name = "ads/advert_list.html"
-    context_object_name = 'Advert'
+    context_object_name = 'adverts'
     paginate_by = 100
 
 class AdvertDetail(DetailView):
     """Подробно об объявлении"""
     model = Advert
-    context_object_name = 'Advert'
+    context_object_name = 'advert'
     template_name = "ads/advert_detail.html"

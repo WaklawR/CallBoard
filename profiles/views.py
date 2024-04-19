@@ -1,23 +1,8 @@
-from django.shortcuts import render
-
-from rest_framework import generics
-from rest_framework import permissions
-
 from .models import Profile
+from django.shortcuts import render
+from django.views.generic import DetailView
 
-
-class ProfileDetail(generics.RetrieveAPIView):
-    permission_classes = [permissions.IsAuthenticated]
-    queryset = Profile.objects.all()
-
-class ProfileUpdateView(generics.UpdateAPIView):
-    permission_classes = [permissions.IsAuthenticated]
-    queryset = Profile.objects.all()
-
-
-class AvatarProfileUpdateView(generics.UpdateAPIView):
-    permission_classes = [permissions.IsAuthenticated]
-    queryset = Profile.objects.all()
-
-
-
+def profile_detail(DetailView):
+    model = Profile
+    context_object_name = 'profile'
+    template_name = 'profiles/user-detail.html'

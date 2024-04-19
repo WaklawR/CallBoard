@@ -48,12 +48,11 @@ class Advert(models.Model):
 
     @property
     def get_absolute_url(self):
-        return reverse("advert-detail", kwargs={"category": self.category.slug, "slug":self.slug})
+        return reverse("advert-detail", kwargs={ "slug":self.slug})
 
 
     class Meta:
-        verbose_name = ("Объявлени"
-                        "е")
+        verbose_name = "Объявление"
         verbose_name_plural = "Объявления"
 
 

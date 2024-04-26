@@ -1,8 +1,28 @@
-from .models import Profile
-from django.shortcuts import render
-from django.views.generic import DetailView
+from rest_framework import generics
+from rest_framework import permissions
 
-class Profile_Detail(DetailView):
-    model = Profile
-    context_object_name = 'profile'
-    template_name = 'profiles/user-detail.html'
+from .models import Profile
+from .serializers import ProfileSer, ProfileUpdateSer, AvatarUpdateSer
+
+
+class ProfileDetail(generics.RetrieveAPIView):
+    """Профиль пользователя"""
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSer
+
+
+class ProfileUpdateView(generics.UpdateAPIView):
+    """Редактирование профилья пользователя"""
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Profile.objects.all()
+    serializer_class = ProfileUpdateSer
+
+
+class AvatarProfileUpdateView(generics.UpdateAPIView):
+    """Редактирование аватара профилья пользователя"""
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Profile.objects.all()
+    serializer_class = AvatarUpdateSer
+
+

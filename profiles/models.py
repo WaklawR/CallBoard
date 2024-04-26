@@ -18,6 +18,13 @@ class Profile(models.Model):
     def __str__(self):
         return self.first_name
 
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #     self.slug = "{}{}".format(self.user_id, self.first_name)
+
+    # def get_absolute_url(self):
+    #     return reverse("profile-detail", kwargs={"slug": self.user.username})
+
     class Meta:
         verbose_name = "Профиль"
         verbose_name_plural = "Профиля"
